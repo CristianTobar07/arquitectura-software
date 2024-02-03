@@ -19,7 +19,7 @@ jobs:
           node-version: '15.x'
       - run: 
           npm i
-          npm run test  # not implement yet
+          # npm run test  # not implement yet
           npm run build
 
   cd-job:
