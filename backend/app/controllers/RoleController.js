@@ -13,7 +13,7 @@ class RoleController {
   static async lookById(req, res, next){
     try{
       const uid = req.params.id;
-      const a_document = roleModel.findById(uid);
+      const a_document = await roleModel.findById(uid);
       if(a_document === null){
         // TODO: mejorar la captura de errores
         res.status(404).json({"message": "Role NOT found"})
