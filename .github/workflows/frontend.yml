@@ -33,13 +33,13 @@ jobs:
       - name: Docker build frontend
         run: |
           cd frontend
-          docker build . -t ${{ secrets.DOCKER_USER }}/doctor-scheduler-frontend
+          docker build . -t ${{ secrets.DOCKER_USER }}/doctor-scheduler-frontend-cdt
  
       - name: Container Tags
         run: |
-          docker tag ${{ secrets.DOCKER_USER }}/doctor-scheduler-frontend ${{ secrets.DOCKER_USER }}/doctor-scheduler-frontend:${{ github.sha }}
-          docker tag ${{ secrets.DOCKER_USER }}/doctor-scheduler-frontend ${{ secrets.DOCKER_USER }}/doctor-scheduler-frontend:latest
+          docker tag ${{ secrets.DOCKER_USER }}/doctor-scheduler-frontend-cdt ${{ secrets.DOCKER_USER }}/doctor-scheduler-frontend-cdt:${{ github.sha }}
+          docker tag ${{ secrets.DOCKER_USER }}/doctor-scheduler-frontend-cdt ${{ secrets.DOCKER_USER }}/doctor-scheduler-frontend-cdt:latest
       - name: Container Push
         run: |
-          docker push ${{ secrets.DOCKER_USER }}/doctor-scheduler-frontend:${{ github.sha }}
-          docker push ${{ secrets.DOCKER_USER }}/doctor-scheduler-frontend:latest
+          docker push ${{ secrets.DOCKER_USER }}/doctor-scheduler-frontend-cdt:${{ github.sha }}
+          docker push ${{ secrets.DOCKER_USER }}/doctor-scheduler-frontend-cdt:latest
