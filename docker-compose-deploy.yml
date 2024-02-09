@@ -1,7 +1,7 @@
-version: '1'
+version: '2'
 services:
   deploy_backend:
-    image: cristiantobar/doctor-scheduler-backend-cdt
+    image: cristiantobar/doctor-scheduler-backend-fcdt
     container_name: cdt-backend
     expose:
       - 9030
@@ -10,7 +10,7 @@ services:
     networks:
       - doctorscheduler
   deploy_frontend:
-    image: cristiantobar/doctor-scheduler-frontend-cdt
+    image: cristiantobar/doctor-scheduler-frontend-fcdt
     container_name: cdt-frontend
     expose:
       - 80
